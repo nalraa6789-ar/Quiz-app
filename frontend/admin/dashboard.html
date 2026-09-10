@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — QuizApp</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="navbar-mount" class="navbar"></div>
+
+  <div class="container">
+    <div class="flex-between mb-24">
+      <h1>Admin Dashboard</h1>
+      <div class="flex gap-12">
+        <a href="questions.html" class="btn btn-outline btn-sm">Questions</a>
+        <a href="categories.html" class="btn btn-outline btn-sm">Categories</a>
+        <a href="users.html" class="btn btn-outline btn-sm">Users</a>
+      </div>
+    </div>
+
+    <div class="grid grid-4 mb-24" id="stats-grid">
+      <p class="text-muted">Loading stats...</p>
+    </div>
+
+    <h2 class="mb-16">Recent Quiz Attempts</h2>
+    <div class="card" id="recent-card">
+      <p class="text-muted">Loading...</p>
+    </div>
+  </div>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz — QuizApp</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="navbar-mount" class="navbar"></div>
+
+  <div class="container" style="max-width:720px;">
+    <div id="loading-state" class="empty-state">
+      <span class="spinner" style="border-top-color:var(--primary);border-color:rgba(79,70,229,.25);"></span>
+      <p class="mt-16">Loading quiz...</p>
+    </div>
+
+    <div id="quiz-wrap" class="hidden">
+      <div class="quiz-header">
+        <div>
+          <strong id="question-counter">Question 1 of 10</strong>
+          <div class="text-muted" id="category-label" style="font-size:.85rem;"></div>
+        </div>
+        <div class="timer" id="timer">00:30</div>
+      </div>
+
+      <div class="progress-track mb-24">
+        <div class="progress-fill" id="progress-fill" style="width:0%;"></div>
+      </div>
+
+      <div class="card">
+        <h2 id="question-text" style="margin-top:0;"></h2>
+        <div id="options-wrap"></div>
+      </div>
+
+      <div class="flex-between mt-24">
+        <button class="btn btn-outline" id="prev-btn" onclick="prevQuestion()">← Previous</button>
+        <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register — QuizApp</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container-narrow" style="padding-top:40px;">
+    <div class="text-center mb-24">
+      <div style="font-size:2rem;">📝</div>
+      <h1 style="margin:8px 0 0;">Create your account</h1>
+      <p class="text-muted">Start testing your knowledge</p>
+    </div>
+
+    <div class="card">
+      <div class="form-error-box" id="form-error"></div>
+      <form id="register-form">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" placeholder="Jane Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="janedoe" minlength="3" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="At least 6 characters" minlength="6" required>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" placeholder="Repeat password" minlength="6" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Create Account</button>
+      </form>
+    </div>
+
+    <p class="text-center mt-16 text-muted">
+      Already have an account? <a href="login.html">Login</a>
+    </p>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

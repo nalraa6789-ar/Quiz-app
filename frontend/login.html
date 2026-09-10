@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login — QuizApp</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container-narrow" style="padding-top:60px;">
+    <div class="text-center mb-24">
+      <div style="font-size:2rem;">📝</div>
+      <h1 style="margin:8px 0 0;">Welcome back</h1>
+      <p class="text-muted">Log in to continue your quizzes</p>
+    </div>
+
+    <div class="card">
+      <div class="form-error-box" id="form-error"></div>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="identifier">Email or Username</label>
+          <input type="text" id="identifier" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="••••••••" required>
+        </div>
+        <div class="flex-between mb-16">
+          <label class="checkbox-row"><input type="checkbox" id="remember"> Remember me</label>
+          <a href="forgot-password.html" style="font-size:.85rem;">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Login</button>
+      </form>
+    </div>
+
+    <p class="text-center mt-16 text-muted">
+      Don't have an account? <a href="register.html">Register</a>
+    </p>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

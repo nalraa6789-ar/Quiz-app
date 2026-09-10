@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leaderboard — QuizApp</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="navbar-mount" class="navbar"></div>
+
+  <div class="container">
+    <h1>Leaderboard</h1>
+
+    <div class="flex gap-12 mb-16" style="flex-wrap:wrap;">
+      <select id="filter-category"><option value="">All Categories</option></select>
+      <select id="filter-difficulty">
+        <option value="">All Difficulties</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+      <select id="filter-period">
+        <option value="all">All Time</option>
+        <option value="week">Past Week</option>
+        <option value="month">Past Month</option>
+      </select>
+    </div>
+
+    <div class="card" id="leaderboard-card">
+      <p class="text-muted">Loading leaderboard...</p>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/leaderboard.js"></script>
+</body>
+</html>

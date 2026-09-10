@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage Users — QuizApp</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="navbar-mount" class="navbar"></div>
+
+  <div class="container">
+    <h1 style="margin:0 0 4px;">Manage Users</h1>
+    <a href="dashboard.html" class="text-muted" style="font-size:.85rem;">← Back to Admin Dashboard</a>
+
+    <div class="mt-16 mb-16">
+      <input type="text" id="search-input" placeholder="Search by name, username, or email..." style="max-width:320px;">
+    </div>
+
+    <div class="card" style="padding:0;overflow-x:auto;">
+      <table id="users-table">
+        <thead><tr><th>Name</th><th>Username</th><th>Email</th><th>Role</th><th>Status</th><th>Joined</th><th></th></tr></thead>
+        <tbody><tr><td colspan="7" class="text-muted" style="padding:20px;">Loading...</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

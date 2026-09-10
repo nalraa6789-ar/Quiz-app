@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile — QuizApp</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="navbar-mount" class="navbar"></div>
+
+  <div class="container" style="max-width:640px;">
+    <h1>My Profile</h1>
+
+    <div class="card mb-24" id="profile-summary">
+      <p class="text-muted">Loading...</p>
+    </div>
+
+    <div class="card">
+      <h3>Edit Profile</h3>
+      <div class="form-error-box" id="form-error"></div>
+      <div class="form-success-box" id="form-success"></div>
+      <form id="profile-form">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" required>
+        </div>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" required>
+        </div>
+        <div class="form-group">
+          <label for="profileImage">Profile Picture URL</label>
+          <input type="text" id="profileImage" placeholder="https://... (optional)">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="email" disabled>
+          <p class="text-muted" style="font-size:.78rem;margin-top:4px;">Email can't be changed without verification.</p>
+        </div>
+        <hr style="border-color:var(--border);margin:20px 0;">
+        <div class="form-group">
+          <label for="currentPassword">Current Password <span class="text-muted">(only needed to change password)</span></label>
+          <input type="password" id="currentPassword">
+        </div>
+        <div class="form-group">
+          <label for="newPassword">New Password</label>
+          <input type="password" id="newPassword" minlength="6">
+        </div>
+        <button type="submit" class="btn btn-primary" id="submit-btn">Save Changes</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>
