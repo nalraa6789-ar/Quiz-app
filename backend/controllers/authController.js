@@ -4,7 +4,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { pool } = require('../config/database');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 const crypto = require('crypto');
 
 const SALT_ROUNDS = 10;
@@ -135,15 +135,7 @@ async function logout(req, res) {
   return res.json({ success: true, message: 'Logged out successfully.' });
 }
 
-const transporter = nodemailer.createTransport({
-  host: process.env.MAIL_HOST,
-  port: Number(process.env.MAIL_PORT),
-  secure: process.env.MAIL_SECURE === 'true',
-  auth: {
-    user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASS
-  }
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 async function requestPasswordReset(req, res) {
   try {
     const { email } = req.body;
@@ -199,21 +191,29 @@ async function requestPasswordReset(req, res) {
     const resetLink =
   `${process.env.APP_BASE_URL}/reset-password.html?token=${resetToken}`;
 
-await transporter.sendMail({
-  from: `"Quiz App" <${process.env.MAIL_USER}>`,
-  to: user.email,
+const { data, error } = await resend.emails.send({
+  from: 'Quiz App <onboarding@resend.dev>',
+  to: [user.email],
   subject: 'Quiz App - Reset Your Password',
   html: `
     <h2>Password Reset</h2>
     <p>Hello ${user.full_name},</p>
     <p>We received a request to reset your Quiz App password.</p>
+
     <p>
-      <a href="${resetLink}">Reset My Password</a>
+      <a href="${resetLink}">
+        Reset My Password
+      </a>
     </p>
+
     <p>This link will expire in 1 hour.</p>
     <p>If you did not request this, you can ignore this email.</p>
   `
 });
+
+if (error) {
+  throw error;
+}
 
     return res.json({
       success: true,
